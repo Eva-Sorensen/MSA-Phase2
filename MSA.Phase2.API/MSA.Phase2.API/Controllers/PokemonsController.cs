@@ -88,22 +88,22 @@ namespace MSA.Phase2.API.Controllers
                 return BadRequest("Must be a valid Trainer Id");
             }
 
+            var pokemon = await _context.Pokemons.FindAsync(id);
+            if (pokemon == null)
+            {
+                return NotFound();
+            }
+
             try
             {
                 var res = await _client.GetAsync(createPokemon.CodexNumber.ToString());
                 PokemonApiData content = await res.Content.ReadFromJsonAsync<PokemonApiData>();
 
-                var pokemon = new Pokemon
-                {
-                    Id = id,
-                    CodexNumber = createPokemon.CodexNumber,
-                    Name = content.Name,
-                    Height = content.Height,
-                    Weight = content.Weight,
-                    TrainerId = createPokemon.TrainerId
-                };
-
-                _context.Entry(pokemon).State = EntityState.Modified;
+                pokemon.CodexNumber = createPokemon.CodexNumber;
+                pokemon.Name = content.Name;
+                pokemon.Height = content.Height;
+                pokemon.Weight = content.Weight;
+                pokemon.TrainerId = createPokemon.TrainerId;
 
                 await _context.SaveChangesAsync();
             }

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSA.Phase2.API", "MSA.Phase2.API\MSA.Phase2.API.csproj", "{8A2A5E30-8F07-4139-BB48-F134FDD15AC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSA.Phase2.API", "MSA.Phase2.API\MSA.Phase2.API.csproj", "{8A2A5E30-8F07-4139-BB48-F134FDD15AC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSA.Phase2.API.Test", "MSA.Phase2.API.Test\MSA.Phase2.API.Test.csproj", "{4C87382C-BB89-4B6D-837D-C392D8D5E058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8A2A5E30-8F07-4139-BB48-F134FDD15AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A2A5E30-8F07-4139-BB48-F134FDD15AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A2A5E30-8F07-4139-BB48-F134FDD15AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C87382C-BB89-4B6D-837D-C392D8D5E058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C87382C-BB89-4B6D-837D-C392D8D5E058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C87382C-BB89-4B6D-837D-C392D8D5E058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C87382C-BB89-4B6D-837D-C392D8D5E058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

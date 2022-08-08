@@ -65,14 +65,20 @@ namespace MSA.Phase2.API.Controllers
         // PUT: api/Trainers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTrainer(int id, Trainer trainer)
+        public async Task<IActionResult> PutTrainer(int id, SimpleTrainerDto simpleTrainer)
         {
-            if (id != trainer.Id)
+            if (id != simpleTrainer.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(trainer).State = EntityState.Modified;
+            var trainer = await _context.Trainers.FindAsync(id);
+            if (trainer == null)
+            {
+                return NotFound();
+            }
+
+            trainer.Name = simpleTrainer.Name;
 
             try
             {

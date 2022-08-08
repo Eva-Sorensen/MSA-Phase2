@@ -19,7 +19,7 @@ namespace MSA.Phase2.API.Controllers
         public int Weight { get; set; }
     }
 
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class PokemonsController : ControllerBase
     {
